@@ -23,6 +23,10 @@ switch (liriOutput) {
   case "movie-this":
       movieThis();
       break;
+
+  case "do-what-it-says":
+      doWhatItSays();
+      break;
 };
 
       function myTweets() {
@@ -91,3 +95,17 @@ switch (liriOutput) {
     }
 });
     };
+
+    function doWhatItSays(){
+        fs.writeFile("random.txt", 'spotify-this-song,"I Want it That Way"', function (err) {
+            var song = "spotify-this-song 'I Want it That Way'"
+            if (err) {
+                return console.log(err);
+            };
+    
+            // Otherwise, it will print:
+            console.log(song);
+        });
+    };
+
+   
