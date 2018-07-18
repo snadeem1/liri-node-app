@@ -19,6 +19,10 @@ switch (liriOutput) {
   case "spotify-this-song":
       spotifyThisSong();
       break;
+
+  case "movie-this":
+      movieThis();
+      break;
 };
 
       function myTweets() {
@@ -65,4 +69,25 @@ switch (liriOutput) {
       
       });
 
+    };
+
+
+    function movieThis(){
+        var movieName = process.argv[3];
+        var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+
+    request(queryUrl, function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            var movieInfo = JSON.parse(body);
+            console.log("Title: " + movieInfo.Title);
+            console.log("Year: " + movieInfo.Year);
+            console.log("IMDB Rating: " + movieInfo.imdbRating);
+            console.log("Rotten Tomatoes Rating: " + movieInfo.Ratings[1].Value);
+            console.log("Origin Country: " + movieInfo.Country);
+            console.log("Language: " + movieInfo.Language);
+            console.log("Plot: " + movieInfo.Plot);
+            console.log("Actors: " + movieInfo.Actors);
+            
+    }
+});
     };
