@@ -36,6 +36,7 @@ switch (liriOutput) {
                 for (var i = 0; i < tweets.length; i++) {
     
                     console.log(tweets[i].text);
+                    console.log("-------------------------------------")
                 };
             } else {
                 console.log("error: " + err);
@@ -68,6 +69,7 @@ switch (liriOutput) {
           console.log("song name: " + songs[i].name);
           console.log ("Preview Url: " + songs[i].preview_url);
           console.log ("Album Name: " + songs[i].album.name);
+          console.log ("----------------------------------------------")
       
         }
       
@@ -91,6 +93,7 @@ switch (liriOutput) {
             console.log("Language: " + movieInfo.Language);
             console.log("Plot: " + movieInfo.Plot);
             console.log("Actors: " + movieInfo.Actors);
+            console.log ("----------------------------------------------")
             
     }
 });
