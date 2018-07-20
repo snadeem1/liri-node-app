@@ -27,6 +27,14 @@ switch (liriOutput) {
   case "do-what-it-says":
       doWhatItSays();
       break;
+
+
+      default: console.log("\n" + "type any command after 'node liri.js': " + "\n" +
+      "my-tweets" + "\n" +
+      "spotify-this-song 'any song title' " + "\n" +
+      "movie-this 'any movie title' " + "\n" +
+      "do-what-it-says " + "\n" +
+      "Use quotes for multiword titles!");
 };
 
       function myTweets() {
@@ -80,7 +88,11 @@ switch (liriOutput) {
 
     function movieThis(){
         var movieName = process.argv[3];
+        if (!movieName){
+            movieName= "Mr.Nobody";
+        };
         var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+        
 
     request(queryUrl, function (error, response, body) {
         if (!error && response.statusCode === 200) {
@@ -97,6 +109,7 @@ switch (liriOutput) {
             
     }
 });
+        
     };
 
     function doWhatItSays(){
