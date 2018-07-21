@@ -42,8 +42,9 @@ switch (liriOutput) {
         client.get('statuses/user_timeline', params, function (error, tweets, response) {
             if (!error) {
                 for (var i = 0; i < tweets.length; i++) {
-    
-                    console.log(tweets[i].text);
+                    var date = tweets[i].created_at;
+
+                    console.log("@node_project: " + tweets[i].text + " Created At: " + date.substring(0, 19));
                     console.log("-------------------------------------")
                 };
             } else {
